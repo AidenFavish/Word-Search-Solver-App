@@ -12,6 +12,7 @@ struct DataScanner: UIViewControllerRepresentable {
     
     @Binding var startScanning: Bool
     @Binding var scanText: String
+    var width: Int
     
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let controller = DataScannerViewController(
@@ -35,23 +36,55 @@ struct DataScanner: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(self, width)
     }
     
     class Coordinator: NSObject, DataScannerViewControllerDelegate {
         var parent: DataScanner
+        var width: Int
         
-        init(_ parent: DataScanner) {
+        init(_ parent: DataScanner, _ width: Int) {
             self.parent = parent
+            self.width = width
         }
         
         func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
             switch item {
             case .text(let text):
-                parent.scanText = text.transcript
+                var ans1 = ""
+                var ans2 = ""
+                let raw = text.transcript.uppercased()
+                let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+                
+                for i in 0...raw.count-1 {
+                    if alphabet.contains(raw[i]) {
+                        ans1 += raw[i]
+                    }
+                }
+                
+                for i in 1...ans1.count {
+                    if i % width == 0 {
+                        ans2 += ans1[i-1] + "\n"
+                    } else {
+                        ans2 += ans1[i-1]
+                    }
+                }
+                
+                if ans1.count % width == 0 {
+                    parent.scanText = ans2
+                } else {
+                    parent.scanText = "Error detected scan again"
+                }
+                
+                
             default: break
             }
         }
         
+    }
+}
+extension String {
+    subscript(i: Int) -> String {
+        return String(self[index(startIndex, offsetBy: i)])
     }
 }

@@ -14,7 +14,7 @@ struct Home: View {
                 VStack {
                     HStack {
                         Spacer()
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: DimensionPrompt()) {
                             Image("StartScanner")
                                 .resizable()
                                 .frame(width: 200, height: 250)
