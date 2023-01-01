@@ -6,16 +6,29 @@
 //
 
 import SwiftUI
+import VisionKit
 
 struct ContentView: View {
+    
+    @State private var startScanning = false
+    @State private var scanText = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack(spacing: 0) {
+            DataScanner(startScanning: $startScanning, scanText: $scanText)
+                .frame(height: 400)
+         
+            Text(scanText)
+                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
+                .background(in: Rectangle())
+                .backgroundStyle(Color(uiColor: .systemGray6))
+         
         }
-        .padding()
+        .task {
+            if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
+                startScanning.toggle()
+            }
+        }
     }
 }
 

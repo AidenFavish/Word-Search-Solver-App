@@ -11,6 +11,8 @@
 		2BC5DA7F296147C300892928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5DA7E296147C300892928 /* ContentView.swift */; };
 		2BC5DA81296147C500892928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC5DA80296147C500892928 /* Assets.xcassets */; };
 		2BC5DA84296147C500892928 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC5DA83296147C500892928 /* Preview Assets.xcassets */; };
+		2BC5DA8B2961492500892928 /* DataScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5DA8A2961492500892928 /* DataScanner.swift */; };
+		2BC5DA8D29614E4D00892928 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5DA8C29614E4D00892928 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		2BC5DA7E296147C300892928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2BC5DA80296147C500892928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC5DA83296147C500892928 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2BC5DA8A2961492500892928 /* DataScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScanner.swift; sourceTree = "<group>"; };
+		2BC5DA8C29614E4D00892928 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				2BC5DA7C296147C300892928 /* WordSearchSolver2_0App.swift */,
 				2BC5DA7E296147C300892928 /* ContentView.swift */,
+				2BC5DA8C29614E4D00892928 /* Home.swift */,
+				2BC5DA8A2961492500892928 /* DataScanner.swift */,
 				2BC5DA80296147C500892928 /* Assets.xcassets */,
 				2BC5DA82296147C500892928 /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC5DA8B2961492500892928 /* DataScanner.swift in Sources */,
 				2BC5DA7F296147C300892928 /* ContentView.swift in Sources */,
+				2BC5DA8D29614E4D00892928 /* Home.swift in Sources */,
 				2BC5DA7D296147C300892928 /* WordSearchSolver2_0App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +278,7 @@
 				DEVELOPMENT_TEAM = MY4P7829UQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For scanning wordsearches";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +308,7 @@
 				DEVELOPMENT_TEAM = MY4P7829UQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For scanning wordsearches";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
