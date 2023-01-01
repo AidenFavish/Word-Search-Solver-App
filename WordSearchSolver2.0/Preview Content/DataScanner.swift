@@ -12,6 +12,7 @@ struct DataScanner: UIViewControllerRepresentable {
     
     @Binding var startScanning: Bool
     @Binding var scanText: String
+    @Binding var jumble: String
     var width: Int
     
     func makeUIViewController(context: Context) -> DataScannerViewController {
@@ -72,8 +73,10 @@ struct DataScanner: UIViewControllerRepresentable {
                 
                 if ans1.count % width == 0 {
                     parent.scanText = ans2
+                    parent.jumble = ans1
                 } else {
                     parent.scanText = "Error detected scan again"
+                    parent.jumble = ans1
                 }
                 
                 
