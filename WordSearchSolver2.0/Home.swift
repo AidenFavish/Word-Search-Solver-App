@@ -23,9 +23,11 @@ struct Home: View {
                         Spacer()
                     }.padding(.vertical)
                     
-                    Label("History", systemImage: "clock.arrow.circlepath")
-                        .font(.title2)
-                    Text("Coming soon...")
+                    /*Label("History", systemImage: "clock.arrow.circlepath")
+                        .font(.title2)*/
+                    Text("Disclaimer: The current scanning mechanism uses Live Text, which is not meant for scanning large word searches. A new specialized scanner is currently in the works to fix accuracy issues.")
+                        .padding()
+                        .multilineTextAlignment(.center)
                     
                 }.navigationTitle("Home")
             }
