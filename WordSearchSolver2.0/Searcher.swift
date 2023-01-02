@@ -85,7 +85,7 @@ struct Searcher: View {
                         }
 
 
-                        if display1.string.count > 2 {
+                        if searchedWord.count > 2 {
                             //Seeding
                             for i in Map {
                                 if i.letter == Word[0] {
