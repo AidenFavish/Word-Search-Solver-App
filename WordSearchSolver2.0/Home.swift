@@ -25,6 +25,7 @@ struct Home: View {
                     
                     Label("History", systemImage: "clock.arrow.circlepath")
                         .font(.title2)
+                    Text("Coming soon...")
                     
                 }.navigationTitle("Home")
             }

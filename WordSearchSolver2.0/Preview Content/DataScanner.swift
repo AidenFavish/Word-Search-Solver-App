@@ -63,11 +63,11 @@ struct DataScanner: UIViewControllerRepresentable {
                     }
                 }
                 
-                for i in 1...ans1.count {
-                    if i % width == 0 {
-                        ans2 += ans1[i-1] + "\n"
+                for i in 0...ans1.count-1 {
+                    if (i+1) % width == 0 && i != ans1.count-1 {
+                        ans2 += ans1[i] + "\n"
                     } else {
-                        ans2 += ans1[i-1]
+                        ans2 += ans1[i]
                     }
                 }
                 
@@ -78,7 +78,8 @@ struct DataScanner: UIViewControllerRepresentable {
                     parent.scanText = "Error detected scan again"
                     parent.jumble = ans1
                 }
-                
+                let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                impactMed.impactOccurred()
                 
             default: break
             }
